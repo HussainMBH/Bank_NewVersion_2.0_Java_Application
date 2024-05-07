@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.*;
 
 public class Main {
+    private static int assignid = 0;
     public static void main(String[] args) {
         System.out.println("Hello Team...");
         Scanner scn = new Scanner(System.in);
@@ -10,19 +11,22 @@ public class Main {
         ArrayList<Useraccount> userAccounts = new ArrayList<>(); // Store multiple user accounts
 
 
+
         while (loop){
             System.out.println("1. User Account Create \n2. Check Account Details \n3. Check Savings Type \n4. Deposit Money \n5. Exit");
             int k = scn.nextInt();
             switch (k){
                 case 1:{
                     System.out.println("Enter Your ID Number: ");
-                    int userid = scn.nextInt();
+
                     System.out.println("Enter Your name:");
                     String accountname = scn.next();
                     System.out.println("Enter your password:");
                     String accountpassword = scn.next();
                     System.out.println("Enter your Bank Balance:");
                     double accountbalance = scn.nextDouble();
+
+                    int userid = ++assignid;
                     Useraccount objusr = new Useraccount(accountname, accountpassword, accountbalance, userid);
                     userAccounts.add(objusr);
                 }
@@ -61,6 +65,12 @@ public class Main {
 
                 }
                 break;
+                case 3:{
+                    Bankaccount bnk = new Bankaccount();
+                    for (Useraccount user : userAccounts) { // Iterate through the list of user accounts
+                        bnk.showdetails(user); // Display details for each user account
+                    }
+                }
             }
         }
         scn.close(); // Close the scanner outside the loop
