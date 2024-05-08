@@ -13,12 +13,10 @@ public class Main {
 
 
         while (loop){
-            System.out.println("1. User Account Create \n2. Check Account Details \n3. Check Savings Type \n4. Deposit Money \n5. Exit");
+            System.out.println("1. User Account Create \n2. Check Account Details \n3. Show All Users Details \n4. Deposit Money \n5. Check Savings Type \n6. Update User Details \n7. Exit");
             int k = scn.nextInt();
             switch (k){
                 case 1:{
-                    System.out.println("Enter Your ID Number: ");
-
                     System.out.println("Enter Your name:");
                     String accountname = scn.next();
                     System.out.println("Enter your password:");
@@ -70,6 +68,15 @@ public class Main {
                     for (Useraccount user : userAccounts) { // Iterate through the list of user accounts
                         bnk.showdetails(user); // Display details for each user account
                     }
+                }
+                break;
+                case 4:{
+
+                }
+                break;
+                case 5:{
+                    BankDetails bnkdetails = new BankDetails();
+                    bnkdetails.SavingsType();
                 }
             }
         }
