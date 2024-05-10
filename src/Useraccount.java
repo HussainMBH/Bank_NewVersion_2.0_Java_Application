@@ -25,4 +25,17 @@ public class Useraccount {
     public int getUserid() {
         return userid;
     }
+    public void setAccountbalance(double newAccountbalance) {
+        this.accountbalance = newAccountbalance;
+    }
+
+    public void setAccountname(String newUsername) {
+        this.accountname = newUsername;
+    }
+
+    public void setAccountpassword(String newUserpassword) {
+        this.accountpassword = newUserpassword;
+    }
+
+
 }

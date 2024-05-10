@@ -71,6 +71,10 @@ public class Main {
                 }
                 break;
                 case 4:{
+                    Bankaccount bnk = new Bankaccount();
+                    for (Useraccount user : userAccounts) { // Iterate through the list of user accounts
+                        bnk.addmoney(user, 5000); // Display details for each user account
+                    }
 
                 }
                 break;
@@ -78,6 +82,22 @@ public class Main {
                     BankDetails bnkdetails = new BankDetails();
                     bnkdetails.SavingsType();
                 }
+                break;
+                case 6:{
+                    System.out.println("Enter User ID to Update Account Details:");
+                    int updateID = scn.nextInt();
+                    System.out.println("Enter New Name:");
+                    String newaccountname = scn.next();
+                    System.out.println("Enter New Password:");
+                    String newaccountpassword = scn.next();
+                    System.out.println("Enter New Balance:");
+                    double newaccountbalance = scn.nextDouble();
+
+                    Bankaccount bnk = new Bankaccount();
+                    bnk.updateuser(updateID, newaccountname, newaccountpassword, newaccountbalance);
+
+                }
+
             }
         }
         scn.close(); // Close the scanner outside the loop
