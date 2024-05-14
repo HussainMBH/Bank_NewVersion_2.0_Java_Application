@@ -87,16 +87,16 @@ public class Main {
                     System.out.println("Enter User ID to Update Account Details:");
                     int updateID = scn.nextInt();
                     System.out.println("Enter New Name:");
-                    String newaccountname = scn.next();
+                    String newAccountName = scn.next();
                     System.out.println("Enter New Password:");
-                    String newaccountpassword = scn.next();
+                    String newAccountPassword = scn.next();
                     System.out.println("Enter New Balance:");
-                    double newaccountbalance = scn.nextDouble();
+                    double newAccountBalance = scn.nextDouble();
 
                     Bankaccount bnk = new Bankaccount();
-                    bnk.updateuser(updateID, newaccountname, newaccountpassword, newaccountbalance);
-
+                    bnk.updateuser(userAccounts, updateID, newAccountName, newAccountPassword, newAccountBalance);
                 }
+                break;
 
             }
         }

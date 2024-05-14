@@ -28,7 +28,6 @@ public class Useraccount {
     public void setAccountbalance(double newAccountbalance) {
          accountbalance = newAccountbalance;
     }
-
     public void setAccountname(String newUsername) {
          accountname = newUsername;
     }

@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
 public class Bankaccount {
 
@@ -34,10 +33,17 @@ public class Bankaccount {
 
     }
 
-    public void updateuser(int userID, String newUsername, String newUserpassword, double newAccountbalance) {
+    public void updateuser(ArrayList<Useraccount> userAccounts, int userID, String newUsername, String newUserpassword, double newAccountbalance) {
         // Find the user with the given userID
         Useraccount existingUser = null;
 
+        // Search for the user in the list of user accounts
+        for (Useraccount user : userAccounts) {
+            if (user.getUserid() == userID) {
+                existingUser = user;
+                break;
+            }
+        }
 
         if (existingUser != null) {
             // Update user account details using setter methods
@@ -50,6 +56,8 @@ public class Bankaccount {
             System.out.println("User Account ID " + userID + " Not Found");
         }
     }
+
+
 
 
 
