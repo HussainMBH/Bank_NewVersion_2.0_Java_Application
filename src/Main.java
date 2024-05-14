@@ -47,20 +47,19 @@ public class Main {
 //                        System.out.println("No user data entered yet.");
 //                    }
                     System.out.println("Enter Your ID: ");
-                    int searchuserid = scn.nextInt();
-                    boolean find = false;
-                    for(Useraccount user : userAccounts){
-                        if(user.getUserid() == searchuserid){
-                            Bankaccount bnk = new Bankaccount();
-                            bnk.showdetails(user);
-                            find = true;
-                            break;
+                    int searchid = scn.nextInt();
+                    Bankaccount bnk = new Bankaccount();
+                    boolean found = false;
+                    for (Useraccount usr : userAccounts) {
+                        if (usr.getUserid() == searchid) {
+                            bnk.eachshow(usr);
+                            found = true;
+                            break; // Once found, no need to iterate further
                         }
                     }
-                    if (!find) {
+                    if (!found) {
                         System.out.println("User account not found.");
                     }
-
                 }
                 break;
                 case 3:{
@@ -71,6 +70,7 @@ public class Main {
                 }
                 break;
                 case 4:{
+
                     Bankaccount bnk = new Bankaccount();
                     for (Useraccount user : userAccounts) { // Iterate through the list of user accounts
                         bnk.addmoney(user, 5000); // Display details for each user account
